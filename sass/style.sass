@@ -1,0 +1,65 @@
+@import '_variables'
+@import '_mixins'
+
+*
+    box-sizing: border-box
+    font-family: 'Roboto' serif
+
+body
+    background-color: $bg-color
+
+.calculator
+    &__grid
+        height: 95vh
+        display: grid
+        grid-template: repeat(6, 55px) / repeat(4, 55px)
+        justify-content: center
+        align-content: center
+        align-items: stretch
+        justify-items: stretch
+        gap: 10px
+
+    &__field
+        grid-column: 1 / 5
+        border: none
+        text-align: end
+        font-size: 45px
+        font-weight: 500
+        padding-right: 5px 
+        background-color: $bg-color
+        color: #ffffff
+
+    &__item:nth-child(18)
+        grid-column: 1 / 3
+        
+    &__item
+        background-color: #464646
+        border-radius: 55px
+        border: none
+        font-size: 20px
+        color: #ffffff
+        transition: 1s ease-in-out background-color
+        &:hover
+            background-color: #47c8e96b
+            transition: 1s
+
+        &:nth-child(4n + 1)
+            @include different-buttons ($color: #05c5ffd2, $color2: #05c5ffd2, $time: 0s, $border: 3px solid lighten(#05c5ff, 20%))
+            
+
+        &:nth-child(-n + 4)
+            @include different-buttons ($color: #808080, $color2: #808080, $time: 0s, $border: 3px solid #afafaf)
+            
+
+        &:last-child
+            @include different-buttons ($color: #05c5ffd2, $color2: #036988d2, $time: 0s)
+            
+
+
+    
+
+
+
+
+
+

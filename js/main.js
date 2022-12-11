@@ -17,7 +17,7 @@ document.querySelectorAll('button').forEach(item => {
         field.textContent = '';
 
         if (result != '' && sign === '' && numbers.includes(key)) {
-            clearAll()
+            clearAll();
             a += key;
             field.textContent = a;
             console.log(a, b, sign)
@@ -33,7 +33,7 @@ document.querySelectorAll('button').forEach(item => {
         
 
         if (a != '' && b != '' && actions.includes(key)) {
-            calculate()
+            calculate();
             sign = key;
         } else if (actions.includes(key)) {
             field.textContent = key;
@@ -42,15 +42,21 @@ document.querySelectorAll('button').forEach(item => {
         }
         
 
-        if (key === '=' || key === '+/-') {
-            calculate()
-            clearSign()
+        if (key === '=') {
+            calculate();
+            clearSign();
+        }
+        if (key === '+/-') {
+            if (b === ''){
+                 a = a * -1
+                 field.textContent = a
+            } else {
+                b = b * -1
+                field.textContent = b
+            }
         }
 
         function calculate () {
-            if(key === '+/-') {
-                (String(a).includes('-')) ? result = (+a * -1) : result = -(+a)
-            }
 
             switch (sign) {
                 case '/':
@@ -67,8 +73,8 @@ document.querySelectorAll('button').forEach(item => {
                     break
             }
             console.log(result)
+            
             field.textContent = result;
-
             a = result;
             b = '';
         }

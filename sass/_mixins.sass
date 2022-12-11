@@ -1,7 +1,9 @@
 @mixin different-buttons ($color, $color2, $time, $border: none) 
     background-color: $color
     transition: $time
-    &:hover
-        background-color: $color2
-        border: $border
-        transition: $time
+    @media not all and (pointer: coarse) 
+        &:hover
+            background-color: $color2
+            border: $border
+            transition: $time
+    

@@ -56,10 +56,12 @@ body {
   transition: 1s ease-in-out background-color;
 }
 
-.calculator__item:hover {
-  background-color: #47c8e96b;
-  -webkit-transition: 1s;
-  transition: 1s;
+@media not all and (pointer: coarse) {
+  .calculator__item:hover {
+    background-color: #47c8e96b;
+    -webkit-transition: 1s;
+    transition: 1s;
+  }
 }
 
 .calculator__item:nth-child(4n + 1) {
@@ -68,11 +70,13 @@ body {
   transition: 0s;
 }
 
-.calculator__item:nth-child(4n + 1):hover {
-  background-color: #05c5ffd2;
-  border: 3px solid #6bddff;
-  -webkit-transition: 0s;
-  transition: 0s;
+@media not all and (pointer: coarse) {
+  .calculator__item:nth-child(4n + 1):hover {
+    background-color: #05c5ffd2;
+    border: 3px solid #6bddff;
+    -webkit-transition: 0s;
+    transition: 0s;
+  }
 }
 
 .calculator__item:nth-child(-n + 4) {
@@ -81,11 +85,13 @@ body {
   transition: 0s;
 }
 
-.calculator__item:nth-child(-n + 4):hover {
-  background-color: #808080;
-  border: 3px solid #afafaf;
-  -webkit-transition: 0s;
-  transition: 0s;
+@media not all and (pointer: coarse) {
+  .calculator__item:nth-child(-n + 4):hover {
+    background-color: #808080;
+    border: 3px solid #afafaf;
+    -webkit-transition: 0s;
+    transition: 0s;
+  }
 }
 
 .calculator__item:last-child {
@@ -94,9 +100,32 @@ body {
   transition: 0s;
 }
 
-.calculator__item:last-child:hover {
-  background-color: #036988d2;
-  border: none;
-  -webkit-transition: 0s;
-  transition: 0s;
+@media not all and (pointer: coarse) {
+  .calculator__item:last-child:hover {
+    background-color: #036988d2;
+    border: none;
+    -webkit-transition: 0s;
+    transition: 0s;
+  }
+}
+
+@media (max-width: 991px) {
+  .calculator__grid {
+    height: 110vh;
+  }
+  .calculator__item {
+    -webkit-transition: 0.3s ease-out background-color;
+    transition: 0.3s ease-out background-color;
+  }
+  .calculator__item:active {
+    background-color: #2e2e2e;
+    -webkit-transition: 0.01s ease-in background-color;
+    transition: 0.01s ease-in background-color;
+  }
+  .calculator__item:nth-child(4n + 1):active, .calculator__item:last-child:active {
+    background-color: #00799e;
+  }
+  .calculator__item:nth-child(-n + 4):active {
+    background-color: #676767;
+  }
 }

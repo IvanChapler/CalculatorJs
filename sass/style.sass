@@ -39,9 +39,10 @@ body
         font-size: 20px
         color: #ffffff
         transition: 1s ease-in-out background-color
-        &:hover
-            background-color: #47c8e96b
-            transition: 1s
+        @media not all and (pointer: coarse)
+            &:hover
+                background-color: #47c8e96b
+                transition: 1s
 
         &:nth-child(4n + 1)
             @include different-buttons ($color: #05c5ffd2, $color2: #05c5ffd2, $time: 0s, $border: 3px solid lighten(#05c5ff, 20%))
@@ -54,7 +55,7 @@ body
         &:last-child
             @include different-buttons ($color: #05c5ffd2, $color2: #036988d2, $time: 0s)
             
-
+@import '_media'
 
     
 

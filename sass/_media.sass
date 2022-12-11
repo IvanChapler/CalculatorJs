@@ -1,0 +1,16 @@
+@media (max-width: 991px)
+    .calculator
+        &__grid
+            height: 110vh
+        &__item
+            transition: 0.3s ease-out background-color
+            &:active
+                background-color: #2e2e2e
+                transition: 0.01s ease-in background-color
+            &:nth-child(4n + 1), &:last-child
+                &:active
+                    background-color: darken(#05c5ff, 20%)
+            &:nth-child(-n + 4)
+                &:active
+                    background-color: darken(#808080, 10%)
+            

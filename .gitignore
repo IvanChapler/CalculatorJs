@@ -3,6 +3,7 @@
 node_modules
 package-lock.json
 ._*
+.vscode
 
 ###################### Personal data ####################### 
 wp-config.php

@@ -16,7 +16,12 @@ document.querySelectorAll('button').forEach(item => {
     item.addEventListener('click', function() {
         field.textContent = '';
 
-        if (a != '' && sign != '' && numbers.includes(key)) {
+        if (result != '' && sign === '' && numbers.includes(key)) {
+            clearAll()
+            a += key;
+            field.textContent = a;
+            console.log(a, b, sign)
+        } else if (a != '' && sign != '' && numbers.includes(key)) {
             b += key;
             field.textContent = b
             console.log(a, b, sign)
@@ -26,14 +31,27 @@ document.querySelectorAll('button').forEach(item => {
             console.log(a, b, sign)
         }
         
-        if (sign === '' && actions.includes(key)) {
+
+        if (a != '' && b != '' && actions.includes(key)) {
+            calculate()
+            sign = key;
+        } else if (actions.includes(key)) {
             field.textContent = key;
             sign = key;
             console.log(a, b, sign)
-        } 
+        }
         
 
-        if (key === '=') {
+        if (key === '=' || key === '+/-') {
+            calculate()
+            clearSign()
+        }
+
+        function calculate () {
+            if(key === '+/-') {
+                (String(a).includes('-')) ? result = (+a * -1) : result = -(+a)
+            }
+
             switch (sign) {
                 case '/':
                     result = a / b
@@ -67,6 +85,9 @@ function clearAll () {
     b = '';
     sign = '';
     field.textContent = 0;
+    result = '';
 }
 
-
+function clearSign () {
+    sign = '';
+}

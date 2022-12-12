@@ -110,8 +110,11 @@ body {
 }
 
 @media (max-width: 991px) {
+  .calculator {
+    padding-top: 200px;
+  }
   .calculator__grid {
-    height: 110vh;
+    height: auto;
   }
   .calculator__item {
     -webkit-transition: 0.3s ease-out background-color;

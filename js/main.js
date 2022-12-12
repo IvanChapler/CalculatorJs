@@ -3,7 +3,7 @@
 let a = '';
 let b = '';
 let sign = '';
-let result = '';
+let result = '0';
 let field = document.getElementById('field');
 
 const numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '.'];

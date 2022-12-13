@@ -67,7 +67,7 @@ document.querySelectorAll('button').forEach(item => {
         }
 
         function calculate () {
-
+            if (b == '') b = a;
             switch (sign) {
                 case '/':
                     result = a / b
@@ -82,9 +82,10 @@ document.querySelectorAll('button').forEach(item => {
                     result = +a + +b
                     break
             }
+            console.log(a, b, sign)
             console.log(result)
             
-            field.textContent = result;
+            field.textContent = result || a || 0;
             a = result;
             b = '';
         }

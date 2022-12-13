@@ -14,6 +14,7 @@ document.querySelectorAll('button').forEach(item => {
     let key = item.textContent;
 
     item.addEventListener('click', function() {
+        
         field.textContent = '';
 
         if (result != '' && sign === '' && numbers.includes(key)) {
@@ -55,6 +56,15 @@ document.querySelectorAll('button').forEach(item => {
                 field.textContent = b
             }
         }
+        if (key === '%') {
+            if (b === ''){
+                a = a / 100
+                field.textContent = a
+           } else {
+               b = b / 100
+               field.textContent = b
+           }
+        }
 
         function calculate () {
 
@@ -78,6 +88,7 @@ document.querySelectorAll('button').forEach(item => {
             a = result;
             b = '';
         }
+        
     })
 
     
@@ -97,3 +108,4 @@ function clearAll () {
 function clearSign () {
     sign = '';
 }
+
